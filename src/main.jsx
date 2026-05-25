@@ -1,0 +1,18 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+
+import ExpenseProvider from './context/ExpenseContext'
+
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <ExpenseProvider>
+      <App />
+      <ToastContainer />
+    </ExpenseProvider>
+  </React.StrictMode>,
+)
