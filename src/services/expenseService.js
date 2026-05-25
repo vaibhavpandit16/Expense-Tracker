@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API =
-  "https://expense-tracker-wjc2.onrender.com";
+  "https://expense-tracker-wjc2.onrender.com/api/expenses";
 
 
 // GET EXPENSES
