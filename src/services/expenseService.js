@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/expenses";
+const API = "https://expense-tracker-wjc2.onrender.com";
 
 export const getExpenses = async () => {
   const response = await axios.get(API);
