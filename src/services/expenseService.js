@@ -3,7 +3,8 @@ import axios from "axios";
 const API =
   "https://expense-tracker-wjc2.onrender.com";
 
-// GET
+
+// GET EXPENSES
 export const getExpenses =
   async () => {
 
@@ -14,7 +15,8 @@ export const getExpenses =
 
   };
 
-// ADD
+
+// ADD EXPENSE
 export const addExpense =
   async (expenseData) => {
 
@@ -28,7 +30,8 @@ export const addExpense =
 
   };
 
-// DELETE
+
+// DELETE EXPENSE
 export const deleteExpense =
   async (id) => {
 
@@ -41,7 +44,8 @@ export const deleteExpense =
 
   };
 
-// UPDATE
+
+// UPDATE EXPENSE
 export const updateExpense =
   async (
     id,
