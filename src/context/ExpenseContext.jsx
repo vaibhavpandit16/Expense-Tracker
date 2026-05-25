@@ -138,34 +138,44 @@ function ExpenseProvider({
 
 
   // UPDATE EXPENSE
-  const updateExpense =
-    async (
-      id,
-      updatedData
-    ) => {
+ // UPDATE EXPENSE
+const updateExpense =
+  async (
+    id,
+    updatedData
+  ) => {
 
-      try {
+    try {
 
-        const updatedExpense =
-         
-        
-        toast.success("Expense Updated");
-
-        setExpenses((prev) =>
-          prev.map((expense) =>
-            expense._id === id
-              ? updatedExpense
-              : expense
-          )
+      const updatedExpense =
+        await updateExpenseAPI(
+          id,
+          updatedData
         );
 
-      } catch (error) {
+      setExpenses((prev) =>
+        prev.map((expense) =>
+          expense._id === id
+            ? updatedExpense
+            : expense
+        )
+      );
 
-        toast.error("Something went wrong");
+      toast.success(
+        "Expense Updated"
+      );
 
-      }
+    } catch (error) {
 
-    };
+      console.log(error);
+
+      toast.error(
+        "Something went wrong"
+      );
+
+    }
+
+  };
 
 
   // INITIAL FETCH
