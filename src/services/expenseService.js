@@ -1,41 +1,59 @@
 import axios from "axios";
 
-const API = "https://expense-tracker-wjc2.onrender.com";
+const API =
+  "https://expense-tracker-wjc2.onrender.com";
 
-export const getExpenses = async () => {
-  const response = await axios.get(API);
-  return response.data;
-};
+// GET
+export const getExpenses =
+  async () => {
 
-export const addExpense = async (expenseData) => {
+    const response =
+      await axios.get(API);
 
-  console.log(expenseData);
+    return response.data;
 
-  const response = await axios.post(
-    API,
-    expenseData
-  );
+  };
 
-  return response.data;
-};
+// ADD
+export const addExpense =
+  async (expenseData) => {
 
-export const deleteExpense = async (id) => {
-  const response = await axios.delete(
-    `${API}/${id}`
-  );
+    const response =
+      await axios.post(
+        API,
+        expenseData
+      );
 
-  return response.data;
-};
+    return response.data;
 
-export const updateExpense = async (
-  id,
-  expenseData
-) => {
+  };
 
-  const response = await axios.put(
-    `${API}/${id}`,
-    expenseData
-  );
+// DELETE
+export const deleteExpense =
+  async (id) => {
 
-  return response.data;
-};
+    const response =
+      await axios.delete(
+        `${API}/${id}`
+      );
+
+    return response.data;
+
+  };
+
+// UPDATE
+export const updateExpense =
+  async (
+    id,
+    updatedData
+  ) => {
+
+    const response =
+      await axios.put(
+        `${API}/${id}`,
+        updatedData
+      );
+
+    return response.data;
+
+  };

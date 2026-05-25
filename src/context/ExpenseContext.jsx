@@ -137,7 +137,6 @@ function ExpenseProvider({
   };
 
 
-  // UPDATE EXPENSE
  // UPDATE EXPENSE
 const updateExpense =
   async (
