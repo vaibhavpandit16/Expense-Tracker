@@ -34,7 +34,7 @@ function Register() {
       const response =
         await axios.post(
 
-          "http://localhost:5000/api/auth/register",
+          "https://expense-tracker-wjc2.onrender.com",
 
           formData
 
