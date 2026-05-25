@@ -21,10 +21,7 @@ function ExpenseProvider({
 }) {
 
   // EXPENSES
-  const [expenses,
-    setExpenses] =
-      useState([]);
-
+ const [expenses, setExpenses] = useState([]);
 
   // SEARCH
   const [searchTerm,
@@ -60,24 +57,25 @@ function ExpenseProvider({
 
 
   // FETCH EXPENSES
-  const fetchExpenses =
-    async () => {
+  const fetchExpenses = async () => {
+  try {
 
-      try {
+    const data = await getExpenses();
 
-        const data =
-          await getExpenses();
+    if (Array.isArray(data)) {
+      setExpenses(data);
+    } else {
+      console.log("Invalid expenses response:", data);
+      setExpenses([]);
+    }
 
-        setExpenses(data);
+  } catch (error) {
 
-      } catch (error) {
+    console.log(error);
 
-        console.log(error);
-
-      }
-
-    };
-
+    setExpenses([]);
+  }
+};
 
   // ADD EXPENSE
   const addExpense =
